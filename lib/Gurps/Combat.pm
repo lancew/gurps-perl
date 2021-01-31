@@ -19,8 +19,11 @@ has 'duration' => (
 
 has 'sequence' => (
     is => 'lazy',
+);
 
-
+has 'manuevers' => (
+    is => 'ro',
+    default => sub { return [qw( move change_position ready reloading aim attack all_out_attack feint wait all_out_defense concentrate long_action free_actions)]},
 );
 
 sub _build_sequence {
