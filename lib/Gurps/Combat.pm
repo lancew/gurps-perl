@@ -17,6 +17,22 @@ has 'duration' => (
     default => 0,
 );
 
+has 'sequence' => (
+    is => 'lazy',
+
+
+);
+
+sub _build_sequence {
+    my ($self) = @_;
+
+    my @sequence = sort {
+        $b->move <=> $a->move ||
+        $b->speed <=> $a->speed
+    } @{$self->participants};
+
+    return \@sequence;
+}
 
 
 1;

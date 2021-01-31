@@ -16,7 +16,13 @@ is $char->st,8,'st';
 is $char->dx,15,'dx';
 is $char->iq,12,'iq';
 is $char->ht,12,'ht';
-is $char->mvmt_speed,6.75,'mvmt_speed';
-#is $char->mvmt_move,6,'mvmt_move';
+is $char->speed,6.75,'speed';
+is $char->move,6,'move';
+
+
+use Data::Dumper;
+$Data::Dumper::Sortkeys=1;
+note Dumper $char;
+
 
 done_testing;
